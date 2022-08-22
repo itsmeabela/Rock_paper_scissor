@@ -33,10 +33,10 @@ const game = () => {
     });
   };
   const updateScore = () => {
-    const playerScore = document.querySelector(".player-score");
-    const computerScore = document.querySelector(".computer-score");
-    playerScore.textContent = pScore;
-    computerScore.textContent = cScore;
+    const playerScore = document.querySelector(".player-score p");
+    const computerScore = document.querySelector(".computer-score p");
+    playerScore.innerHTML = pScore;
+    computerScore.innerHTML = cScore;
   };
   const compareHands = (playerChoice, computerChoice) => {
     const winner = document.querySelector(".winner");
@@ -68,6 +68,7 @@ const game = () => {
       } else {
         winner.textContent = "Computer Wins";
         cScore++;
+        updateScore();
         return;
       }
     }
